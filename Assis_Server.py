@@ -9,6 +9,7 @@ import os #Provides a way of using operating system dependent functionality
 import web 
 import logging
 import shelve
+import atexit
 
 class Assis_Server:
  
@@ -84,4 +85,5 @@ _config = {'dbfile': 'direc.db',
 
 logging.info('Loading file Assis_Server.dfs.json.')
 _direc = shelve.open(_config['dbfile'])
+atexit.register(lambda: _direc.close())
 utils.load_config(_config, 'Assis_Server.dfs.json')
