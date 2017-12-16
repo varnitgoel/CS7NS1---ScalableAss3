@@ -30,3 +30,16 @@ class FileServer:
             return()
             
 #*****************************************************************************
+            
+         def DELETE(self, f_path):
+              web.header('Content-Type', 'text/plain; charset=UTF-8')
+              
+              
+         def HEAD(self, f_path):
+              web.header('Content-Type', 'text/plain; charset=UTF-8')
+              
+              
+              
+_config['directories'] = set(_config['directories'])
+
+_init_file_server()
